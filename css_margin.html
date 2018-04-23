@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>margin</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		div {
+
+			border: 1px solid #ccc;
+			background-color: rgb(37, 198, 253);
+		}
+		.px {
+			margin: 10px 0px 13px 15px;
+		}
+		.persent {
+			margin: 10% 50% 30% 20%;
+		}
+		.auto {
+			margin: auto;
+			width: 320px;
+			height: 180px;
+		}
+		.repeat {
+			margin: 20px 30px;
+		}
+	</style>
+
+</head>
+<body>
+	<h1>margin 用法	</h1>
+	<h2>概念</h2>
+	<p>围绕在元素边框的空白区域是外边距。设置外边距会在元素外创建额外的“空白”。</p>
+	<p>设置外边距的最简单的方法就是使用 margin 属性，这个属性接受任何长度单位、百分数值甚至负值。</p>
+	<h2>单位</h2>
+	<p>可以是像素英寸毫米或em</p>
+
+	<div class="px">margin单位是像素</div>
+
+	<div class="persent">margin单位是百分比
+		<p>设置成百分比可以实现流式布局，margin上下左右的值都会根据离他最近的父元素的width进行改变，如果没有给他的父元素设置width会根据当前的body的宽度变化</p>
+		<p>margin-top 和 margin-bottom的margin百分数根据什么呢？也是父元素的width，正常流中的大多数元素都会足够高以包含其后代元素（包括外边距），如果一个元素的上下外边距为父元素的height的百分数，就可能导致一个无限循环，父元素的height会增加，以适应后代元素上下外边距的增加，而相应的，子元素上下外边距因为父元素height的增加而增加，形成死循环</p>
+	</div>
+
+	<div class="auto">margin 值为auto
+		<p>margin 可以设置为 auto。margin-left margin-自动计算当前父元素的宽度减去当前div宽度/2 的值margin-top margin-bottom没有auto值</p>
+		<p>margin-left和margin-right值为auto，页面居中。只是margin-left：auto 页面左对齐，只是margin-right：auto 页面右对齐。margin-top和margin-bottom对设置auto，没有这个效果！</p>
+	</div>
+
+	<div class="repeat">
+		复制值
+
+	</div>
+	
+
+</body>
+</html>
