@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>position</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		div {
+			width: 200px;
+			height: 200px;
+			background-color: rgb(23,123,42);
+			color: #fff;
+			font-size: 16px;
+			line-height: 20px;
+			font-weight: 600;
+			padding: 20px;
+			border: 2px solid #ccc;
+		}
+		.fixed {
+			position: fixed;
+			top: 100px;
+			left: 100px;
+		}
+		.relative {
+			position: relative;
+			top: 300px;
+			left: 300px;
+		}
+		.absolute {
+			position: absolute;
+			top: 500px;
+			left: 500px;
+		}
+		.parent-node {
+			position: relative;
+			background-color: rgb(123,231,32);
+		}
+	</style>
+</head>
+<body>
+	<div class="fixed">
+		width: 200px;<br />
+		height: 200px;<br />
+		background-color: rgb(23,123,42);<br />
+		position: fixed;<br />
+		top: 100px;<br />
+		left: 100px;<br />
+	</div>
+	<div class="relative">
+		width: 200px;<br />
+		height: 200px;<br />
+		background-color: rgb(23,123,42);<br />
+		position: relative;<br />
+		top: 300px;<br />
+		left: 300px;<br />
+	</div>
+	<div class="absolute">
+		width: 200px;<br />
+		height: 200px;<br />
+		background-color: rgb(23,123,42);<br />
+		position: absolute;<br />
+		top: 500px;<br />
+		left: 500px;<br />
+		如果没有最近的已定位的祖先元素会相对于body进行定位
+	</div>
+	<div class="parent-node">
+		祖先元素<br />
+		因为绝对定位的元素的空间不会被释放，还会占据之前的空间和位置，因此这个父元素的位置在这里，上面的空白是前面通过relative定位的div的占位
+		<div class="absolute">
+		width: 200px;<br />
+		height: 200px;<br />
+		background-color: rgb(23,123,42);<br />
+		position: absolute;<br />
+		top: 500px;<br />
+		left: 500px;<br />
+		有最近的已定位的祖先元素会相对于祖先元素进行定位
+	</div>
+	</div>
+
+</body>
+</html>
